@@ -48,7 +48,7 @@ public: float wylicz_cene(REZERWACJA aRezerwacja) {
 	this->_cena = (this->_ilosc_osob * 100)* (this->_czas) + 500);
 	};
 
-public: bool zaplac(float aCena) { return 1; };
+public: bool zaplac(float aCena) { return 1;test commita };
 
 	public: string informacja_zwrotna(REZERWACJA aRezerwacja);
 
