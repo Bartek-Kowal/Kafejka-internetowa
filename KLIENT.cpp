@@ -51,10 +51,25 @@ int KLIENT::rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_k
 }
 
 bool KLIENT::czy_KLIENT_w_bazie(KLIENT aKlient) {	
-	
+	string pom, nr_karty;
 	cout << "LOGOWANIE" << endl;
-
-
+	cin >> nr_karty;
+	while (!(plik.eof()))
+	{
+		getline(plik, pom);
+		if (pom == nr_karty)
+		{
+			cout << "zalogowano pomyslnie" << endl;
+			_czy_KLIENT_w_bazie = 1;
+		}
+		else
+		{
+			cout << "zle haslo" << endl;
+			_czy_KLIENT_w_bazie = 0;
+		}
+		getline(plik, pom);
+	}
+	return _czy_KLIENT_w_bazie;
 }
 
 void KLIENT::przyjecie_informacji_zwrotnej(string aParameter) {
