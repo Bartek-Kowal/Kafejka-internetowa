@@ -33,11 +33,16 @@ class REZERWACJA
 
 	public: void zarezerwuj_sale(string aRodzaj, int aData, int aCzas, int aIlosc_osob);
 
-	public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_w_bazie);
+public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_w_bazie)
+	{
+	this->sprawdz_dostepnosc(this);
+	};
 
 	public: bool sprawdz_wniosek(REZERWACJA aRezerwacja, bool aDostepnosc);
 
-	public: bool sprawdz_dostepnosc(REZERWACJA aRezerwacja);
+public: bool sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
+	SALA::czy_dostepna(_data, _czas, _ilosc_osob, _rodzaj);
+};
 
 	public: float wylicz_cene(REZERWACJA aRezerwacja);
 
@@ -45,7 +50,7 @@ class REZERWACJA
 
 	public: string informacja_zwrotna(REZERWACJA aRezerwacja);
 
-	public: REZERWACJA();
+	public: REZERWACJA();//konstruktor
 };
 
 #endif
