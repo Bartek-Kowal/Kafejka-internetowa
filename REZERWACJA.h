@@ -41,7 +41,7 @@ public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_
 	public: bool sprawdz_wniosek(REZERWACJA aRezerwacja, bool aDostepnosc);
 
 public: bool sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
-	SALA::czy_dostepna(_data, _czas, _ilosc_osob, _rodzaj);
+	SALA::czy_dostepna(this->_data, this->_czas, this->_ilosc_osob, this->_rodzaj);
 };
 
 	public: float wylicz_cene(REZERWACJA aRezerwacja);

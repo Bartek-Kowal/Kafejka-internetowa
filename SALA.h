@@ -19,7 +19,9 @@ class SALA
 	public: int _pojemnosc;
 	public: std::vector<REZERWACJA*> _unnamed_REZERWACJA_;
 
-	public: bool czy_dostepna(int aIlosc_osob, string aRodzaj, int aData, int aCzas);
+public: bool czy_dostepna(int aIlosc_osob, string aRodzaj, int aData, int aCzas) {
+	return 1;
+	};
 
 	public: bool wolne_sale(int aNr_sali, bool aCzy_wolna);
 
