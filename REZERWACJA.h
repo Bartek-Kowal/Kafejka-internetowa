@@ -44,9 +44,11 @@ public: bool sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
 	SALA::czy_dostepna(this->_data, this->_czas, this->_ilosc_osob, this->_rodzaj);
 };
 
-	public: float wylicz_cene(REZERWACJA aRezerwacja);
+public: float wylicz_cene(REZERWACJA aRezerwacja) {
+	this->_cena = (this->_ilosc_osob * 100)* (this->_czas) + 500);
+	};
 
-	public: bool zaplac(float aCena);
+public: bool zaplac(float aCena) { return 1; };
 
 	public: string informacja_zwrotna(REZERWACJA aRezerwacja);
 
