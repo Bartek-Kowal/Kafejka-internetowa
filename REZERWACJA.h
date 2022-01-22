@@ -23,7 +23,7 @@ class REZERWACJA
 	public: string _rodzaj[4];
 	public: int _ilosc_osob;
 	public: bool _odwolanie_rezerwacji;
-	private: bool _czy_sprawdzona;
+	public: bool _czy_sprawdzona;
 	public: bool _dostepnosc;
 	public: float _cena;
 	public: KLIENT* _unnamed_KLIENT_;
