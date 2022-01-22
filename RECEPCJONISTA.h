@@ -19,6 +19,7 @@ class RECEPCJONISTA
 	public: bool sprawdz_wniosek(REZERWACJA aRezerwacja);
 
 public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob) {
+	cout << "\n wniosek do rozpatrzenia:\n" << aRodzaj << "\n" << aData << "\n" << aCzas << "\n" << aOdwolanie_rezerwacji << "\n" << aRaIlosc_osobodzaj << "\n";
 	cout << "czy akceptujesz rezerwacje klienta? wprowadz 1 jesli tak, jesli nie wprowadz 0";
 	short numerek;
 	cin >> numerek;
