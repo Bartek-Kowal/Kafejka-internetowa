@@ -36,9 +36,24 @@ class REZERWACJA
 public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_w_bazie)
 	{
 	this->sprawdz_dostepnosc(this);
+	this->wylicz_cene(this);
+	this->zaplac(this->_cena);
+	this->sprawdz_wniosek(this, this->_dostepnosc);
 	};
 
-	public: bool sprawdz_wniosek(REZERWACJA aRezerwacja, bool aDostepnosc);
+public: bool sprawdz_wniosek(REZERWACJA aRezerwacja, bool aDostepnosc) {
+	if (RECEPCJONISTA::sprawdz_wniosek(this, this->_dostepnosc) == 1) {
+		this->zarezerwuj_sale(_rodzaj, _data, _czas, _ilosc_osob);
+		this->_czy_sprawdzona = 1;
+		this->informacja_zwrotna(this);
+	};
+	else {
+
+	}
+		this->_czy_sprawdzona = 1;
+		this->_odwolanie_rezerwacji = 0;
+		this->informacja_zwrotna(this);
+	};
 
 public: bool sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
 	SALA::czy_dostepna(this->_data, this->_czas, this->_ilosc_osob, this->_rodzaj);
@@ -50,7 +65,17 @@ public: float wylicz_cene(REZERWACJA aRezerwacja) {
 
 public: bool zaplac(float aCena) { return 1;};
 
-	public: string informacja_zwrotna(REZERWACJA aRezerwacja);
+public: string informacja_zwrotna(REZERWACJA aRezerwacja) {
+	if (RECEPCJONISTA::sprawdz_wniosek(this, this->_dostepnosc) == 1) {
+		cout << "wniosek przeszed³";
+
+	};
+	else {
+		cout << "wniosek nie przeszedl, spadaj";
+	}
+};
+
+
 
 	public: REZERWACJA();//konstruktor
 };
