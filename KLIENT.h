@@ -17,9 +17,9 @@ class KLIENT
 {
 	public: string _imie;
 	public: string _nazwisko;
-	private: int _nr_PESEL;
-	private: int _nr_karty;
-	private: bool _czy_KLIENT_w_bazie;
+	public: int _nr_PESEL;
+	public: string _nr_karty;
+	public: bool _czy_KLIENT_w_bazie;
 	public: std::vector<REZERWACJA*> _unnamed_REZERWACJA_;
 	public: std::vector<USLUGA_GASTRO*> _unnamed_USLUGA_GASTRO_;
 
@@ -29,7 +29,7 @@ class KLIENT
 
 	public: bool zaplac(float aCena);
 
-	public: int rejestracja(string aImie, string aNazwisko, int aNr_PESEL);
+	public: string rejestracja(string aImie, string aNazwisko, int aNr_PESEL, string aNr_karty);
 
 	public: bool czy_KLIENT_w_bazie(KLIENT aKlient);
 
