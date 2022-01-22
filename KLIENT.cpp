@@ -4,8 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "KLIENT.h"
-#include "REZERWACJA.h"
-#include "USLUGA_GASTRO.h"
+
 
 
 using namespace std;
@@ -15,10 +14,6 @@ void KLIENT::zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_
 	
 }
 
-USLUGA_GASTRO KLIENT::zloz_Zamowienie(string aSklad_zamowienia[] , string aWiek) {
-	throw "Not yet implemented";
-}
-
 bool KLIENT::zaplac(float aCena) {
 	throw "Not yet implemented";
 }
@@ -26,10 +21,9 @@ bool KLIENT::zaplac(float aCena) {
 int KLIENT::rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_karty) {
 	
 	cout << "REJESTRACJA" << endl;
-	string linia;
+	string linia, karta;
 	getline(plik, linia);
 	
-	{
 		cout << "podaj imie" << endl;
 		cin >> _imie;
 
@@ -37,38 +31,55 @@ int KLIENT::rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_k
 		cin >> _nazwisko;
 
 		cout << "podaj nr_pesel" << endl;
-		cin >> _nr_PESEL;
+		cin >> _nr_PESEL[11];
+		if (!_nr_PESEL[11])
+		{
+			cout << "bledny nr_pesel" << endl;
+			return 0;
+		}
 
-		cout << "podaj nr_karty" << endl;
-		cin >> _nr_karty;
-
+		cout << "podaj 4 cyfrowy nr_karty" << endl;
+		cin >> _nr_karty[4];
+		if (!_nr_karty[4])
+		{
+			cout << "bledny nr_karty" << endl;
+			return 0;
+		}
+		else if (karta == linia)
+		{
+			cout << "taki nr_karty juz istnieje" << endl;
+			return 0;
+		}
+		//int _nr_karty = stoi(karta);
 		plik.open("baza.txt", ios::out | ios::app);
-		plik << _nr_karty << endl;
-	}
+		plik << _nr_karty[4] << endl;
+	
 	plik.close();
-
-	return _nr_karty;
+	cout << _imie << " " << _nazwisko << " " << _nr_PESEL << " " << _nr_karty << endl;
+	return 0;
 }
 
 bool KLIENT::czy_KLIENT_w_bazie(KLIENT aKlient) {	
 	string pom, nr_karty;
 	cout << "LOGOWANIE" << endl;
+	cout << "podaj nr_karty" << endl;
+
+	ifstream plik("baza.txt");
 	cin >> nr_karty;
-	while (!(plik.eof()))
+	while (!plik.eof())
 	{
 		getline(plik, pom);
 		if (pom == nr_karty)
 		{
 			cout << "zalogowano pomyslnie" << endl;
 			_czy_KLIENT_w_bazie = 1;
+			//cout << pom << endl;
 		}
-		else
-		{
-			cout << "zle haslo" << endl;
-			_czy_KLIENT_w_bazie = 0;
-		}
-		getline(plik, pom);
+		
 	}
+	
+	plik.close();
+
 	return _czy_KLIENT_w_bazie;
 }
 
@@ -77,20 +88,10 @@ void KLIENT::przyjecie_informacji_zwrotnej(string aParameter) {
 }
 
 KLIENT::KLIENT() {
-
+	_nr_karty[4] = 0;
+	_nr_PESEL[11] = 0;
 	_czy_KLIENT_w_bazie = 0;
 
-	_czy_KLIENT_w_bazie = 1;
-
-	/*
-	fstream	plik;
 	
-	plik.open("baza.txt", ios::out);
-	string _nr_karty;
-	getline(cin, _nr_karty);
-	plik.write(&_nr_karty[0], _nr_karty.length());
-
-	plik.close();
-	*/
 }
 
