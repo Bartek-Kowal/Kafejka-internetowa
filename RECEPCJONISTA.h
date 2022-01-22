@@ -1,4 +1,5 @@
 #include <exception>
+#include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -17,7 +18,12 @@ class RECEPCJONISTA
 
 	public: bool sprawdz_wniosek(REZERWACJA aRezerwacja);
 
-	public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob);
+public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob) {
+	cout << "czy akceptujesz rezerwacje klienta? wprowadz 1 jesli tak, jesli nie wprowadz 0";
+	short numerek;
+	cin >> numerek;
+	return rumerek;
+	};
 };
 
 #endif
