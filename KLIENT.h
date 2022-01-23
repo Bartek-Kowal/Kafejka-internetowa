@@ -14,21 +14,21 @@ class KLIENT
 {
 	public: string _imie;
 	public: string _nazwisko;
-	public: int _nr_PESEL[11];
-	public: int _nr_karty[4];
-	public: bool _czy_klient_w_bazie;
+	public: char _nr_PESEL[21];
+	public: char _nr_karty[11];
+	public: bool _czy_KLIENT_w_bazie;
 	public: std::vector<REZERWACJA*> _unnamed_REZERWACJA_;
 	public: std::vector<USLUGA_GASTRO*> _unnamed_USLUGA_GASTRO_;
 
-	public: void Zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_KLIENT_w_bazie);
+	public: void zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_KLIENT_w_bazie);
 
-	public: bool Zaplac(float aCena);
+	public: bool zaplac(float aCena);
 
-	public: int Rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_karty);
+	public: int rejestracja(string aImie, string aNazwisko, char aNr_PESEL, char aNr_karty);
 
-	public: bool Czy_klient_w_bazie(KLIENT aKlient);
+	public: bool czy_KLIENT_w_bazie(KLIENT aKlient);
 
-	public: void Przyjecie_informacji_zwrotnej(string aParameter);
+	public: void przyjecie_informacji_zwrotnej(string aParameter);
 
 	public: KLIENT();
 };
