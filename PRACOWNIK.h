@@ -15,7 +15,7 @@ class PRACOWNIK: public BARMAN, public RECEPCJONISTA
 {
 	public: string _imie;
 	public: string _nazwisko;
-	private: int _id;
+	public: int _id;
 };
 
 #endif

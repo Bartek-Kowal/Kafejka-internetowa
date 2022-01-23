@@ -24,6 +24,8 @@ class RECEPCJONISTA
 	return numerek;
 }
 public: void Zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob);
+	  RECEPCJONISTA::RECEPCJONISTA();
 };
+
 
 #endif
