@@ -33,12 +33,12 @@ int main()
 	{
 	case 1:
 
-		jakis_klient.czy_KLIENT_w_bazie(jakis_klient); // logowanie uzytkownika
+		jakis_klient.Czy_klient_w_bazie(jakis_klient); // logowanie uzytkownika
 		break;
 
 	case 2:
 
-		jakis_klient.rejestracja(imie, nazwisko, nr_PESEL, nr_karty); // rejestracja uzytkownika
+		jakis_klient.Rejestracja(imie, nazwisko, nr_PESEL, nr_karty); // rejestracja uzytkownika
 		break;
 	}
 

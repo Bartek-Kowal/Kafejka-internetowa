@@ -10,15 +10,15 @@
 using namespace std;
 fstream plik;
 
-void KLIENT::zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_KLIENT_w_bazie) {
+void KLIENT::Zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_KLIENT_w_bazie) {
 	
 }
 
-bool KLIENT::zaplac(float aCena) {
+bool KLIENT::Zaplac(float aCena) {
 	throw "Not yet implemented";
 }
 
-int KLIENT::rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_karty) {
+int KLIENT::Rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_karty) {
 	
 	cout << "REJESTRACJA" << endl;
 	string linia, karta;
@@ -59,7 +59,7 @@ int KLIENT::rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_k
 	return 0;
 }
 
-bool KLIENT::czy_KLIENT_w_bazie(KLIENT aKlient) {	
+bool KLIENT::Czy_klient_w_bazie(KLIENT aKlient) {	
 	string pom, nr_karty;
 	cout << "LOGOWANIE" << endl;
 	cout << "podaj nr_karty" << endl;
@@ -72,7 +72,7 @@ bool KLIENT::czy_KLIENT_w_bazie(KLIENT aKlient) {
 		if (pom == nr_karty)
 		{
 			cout << "zalogowano pomyslnie" << endl;
-			_czy_KLIENT_w_bazie = 1;
+			_czy_klient_w_bazie = 1;
 			//cout << pom << endl;
 		}
 		
@@ -80,10 +80,10 @@ bool KLIENT::czy_KLIENT_w_bazie(KLIENT aKlient) {
 	
 	plik.close();
 
-	return _czy_KLIENT_w_bazie;
+	return _czy_klient_w_bazie;
 }
 
-void KLIENT::przyjecie_informacji_zwrotnej(string aParameter) {
+void KLIENT::Przyjecie_informacji_zwrotnej(string aParameter) {
 	throw "Not yet implemented";
 }
 
