@@ -5,10 +5,10 @@ using namespace std;
 #ifndef __REZERWACJA_h__
 #define __REZERWACJA_h__
 
-// #include "KLIENT.h"
-// #include "SALA.h"
-// #include "RECEPCJONISTA.h"
-// #include "OBIEKT_BAZY_DANYCH.h"
+#include "KLIENT.h"
+#include "SALA.h"
+#include "RECEPCJONISTA.h"
+#include "OBIEKT_BAZY_DANYCH.h"
 
 class KLIENT;
 class SALA;
@@ -20,7 +20,7 @@ class REZERWACJA
 {
 	public: int _data;
 	public: int _czas;
-	public: string _rodzaj[4];
+	public: string _rodzaj;
 	public: int _ilosc_osob;
 	public: bool _odwolanie_rezerwacji;
 	public: bool _czy_sprawdzona;
@@ -61,6 +61,8 @@ public: bool Sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
 
 public: float Wylicz_cene(REZERWACJA aRezerwacja) {
 	this->_cena = (this->_ilosc_osob * 100)* (this->_czas) + 500);
+	cout << "tyle zabulisz: " << this->_cena;
+	return this->_cena;
 	};
 
 public: bool Zaplac(float aCena) { return 1;};
@@ -77,7 +79,7 @@ public: string Informacja_zwrotna(REZERWACJA aRezerwacja) {
 
 
 
-	public: REZERWACJA();//konstruktor
+	public: REZERWACJA(int _data, int _czas, string _rodzaj, int _ilosc_osob, bool _odwolanie_rezerwacji, bool _czy_sprawdzona, bool _dostepnosc, float _cena);//konstruktor
 };
 
 #endif

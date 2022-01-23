@@ -4,18 +4,21 @@
 #include <vector>
 #include <fstream>
 #include "KLIENT.h"
-
+#include "REZERWACJA.h"
 
 
 using namespace std;
 fstream plik;
 
 void KLIENT::Zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_KLIENT_w_bazie) {
-	
+	if (aCzy_klient_w_bazie) {
+		REZERWACJA::REZERWACJA(aData, aCzas, aRodzaj, aIlosc_osob, aOdwolanie_rezerwacji);
+	};
+	else { return 0; };
 }
 
 bool KLIENT::Zaplac(float aCena) {
-	throw "Not yet implemented";
+	cout<<"zaplacono cene: "<<aCena;
 }
 
 int KLIENT::Rejestracja(string aImie, string aNazwisko, int aNr_PESEL, int aNr_karty) {
@@ -84,7 +87,7 @@ bool KLIENT::Czy_klient_w_bazie(KLIENT aKlient) {
 }
 
 void KLIENT::Przyjecie_informacji_zwrotnej(string aParameter) {
-	throw "Not yet implemented";
+	cout<<aParameter;
 }
 
 KLIENT::KLIENT() {
