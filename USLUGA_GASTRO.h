@@ -20,17 +20,17 @@ class USLUGA_GASTRO
 	public: KLIENT* _unnamed_KLIENT_;
 	public: BARMAN* _unnamed_BARMAN_;
 
-	public: void przyjmij_zamowienie(string aSklad_zamowienia[] , int aWiek);
+	public: void Przyjmij_zamowienie(string aSklad_zamowienia[] , int aWiek);
 
-	public: string zrealizuj_zamowienie(USLUGA_GASTRO aUsluga_gastro);
+	public: string Zrealizuj_zamowienie(USLUGA_GASTRO aUsluga_gastro);
 
-	public: float wylicz_cene(USLUGA_GASTRO aUsluga_gastro);
+	public: float Wylicz_cene(USLUGA_GASTRO aUsluga_gastro);
 
-	public: bool zaplac();
+	public: bool Zaplac();
 
-	public: bool czy_pelnoletni(int aWiek);
+	public: bool Czy_pelnoletni(int aWiek);
 
-	public: string informacja_zwrotna(USLUGA_GASTRO aUsluga_gastro);
+	public: string Informacja_zwrotna(USLUGA_GASTRO aUsluga_gastro);
 
 	public: USLUGA_GASTRO();
 };
