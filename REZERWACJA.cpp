@@ -8,31 +8,31 @@ using namespace std;
 #include "RECEPCJONISTA.h"
 #include "OBIEKT_BAZY_DANYCH.h"
 
-void REZERWACJA::zarezerwuj_sale(string aRodzaj, int aData, int aCzas, int aIlosc_osob) {
+void REZERWACJA::Zarezerwuj_sale(string aRodzaj, int aData, int aCzas, int aIlosc_osob) {
 	throw "Not yet implemented";
 }
 
-void REZERWACJA::zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_w_bazie) {
+void REZERWACJA::Zloz_wniosek(string aRodzaj, int aData, int aCzas, bool aOdwolanie_rezerwacji, int aIlosc_osob, bool aCzy_w_bazie) {
 	throw "Not yet implemented";
 }
 
-bool REZERWACJA::sprawdz_wniosek(REZERWACJA aRezerwacja, bool aDostepnosc) {
+bool REZERWACJA::Sprawdz_wniosek(REZERWACJA aRezerwacja, bool aDostepnosc) {
 	throw "Not yet implemented";
 }
 
-bool REZERWACJA::sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
+bool REZERWACJA::Sprawdz_dostepnosc(REZERWACJA aRezerwacja) {
 	throw "Not yet implemented";
 }
 
-float REZERWACJA::wylicz_cene(REZERWACJA aRezerwacja) {
+float REZERWACJA::Wylicz_cene(REZERWACJA aRezerwacja) {
 	throw "Not yet implemented";
 }
 
-bool REZERWACJA::zaplac(float aCena) {
+bool REZERWACJA::Zaplac(float aCena) {
 	throw "Not yet implemented";
 }
 
-string REZERWACJA::informacja_zwrotna(REZERWACJA aRezerwacja) {
+string REZERWACJA::Informacja_zwrotna(REZERWACJA aRezerwacja) {
 	throw "Not yet implemented";
 }
 
