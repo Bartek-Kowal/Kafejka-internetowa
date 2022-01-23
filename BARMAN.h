@@ -14,7 +14,7 @@ class BARMAN
 {
 	public: std::vector<USLUGA_GASTRO*> _unnamed_USLUGA_GASTRO_;
 
-	public: USLUGA_GASTRO zrealizuj_zamowienie(string aSklad_zamowienia[] , string aWiek);
+	public: USLUGA_GASTRO Zrealizuj_zamowienie(string aSklad_zamowienia[] , string aWiek);
 };
 
 #endif
