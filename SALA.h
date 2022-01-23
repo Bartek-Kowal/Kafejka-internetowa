@@ -19,13 +19,13 @@ public: int _godziny_rezerwacji[10];
 public: int _pojemnosc;
 public: std::vector<REZERWACJA*> _unnamed_REZERWACJA_;
 
-public: bool czy_dostepna(int aIlosc_osob, string aRodzaj, int aData, int aCzas) {
+public: bool Czy_dostepna(int aIlosc_osob, string aRodzaj, int aData, int aCzas) {
 	return 1;
 };
 
-public: bool wolne_sale(int aNr_sali, bool aCzy_wolna);
+public: bool Wolne_sale(int aNr_sali, bool aCzy_wolna);
 
-public: bool zarezerwuj_sale(REZERWACJA aRezerwacja);
+public: bool Zarezerwuj_sale(REZERWACJA aRezerwacja);
 };
 
 #endif
