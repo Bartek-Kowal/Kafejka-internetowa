@@ -20,11 +20,11 @@ class OBIEKT_BAZY_DANYCH
 	public: bool _czy_zarejestrowany;
 	public: std::vector<REZERWACJA*> _unnamed_REZERWACJA_;
 
-	public: int rejestracja(KLIENT aKlient, OBIEKT_BAZY_DANYCH aCzy_zarejestrowany);
+	public: int Rejestracja(KLIENT aKlient, OBIEKT_BAZY_DANYCH aCzy_zarejestrowany);
 
-	public: bool czy_KLIENT_w_bazie(string aImie, string aNazwisko, int aPESEL);
+	public: bool Czy_klient_w_bazie(string aImie, string aNazwisko, int aPESEL);
 
-	public: bool zgodnosc_nr_karty(int aNr_karty);
+	public: bool Zgodnosc_nr_karty(int aNr_karty);
 };
 
 #endif
